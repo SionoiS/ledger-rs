@@ -96,7 +96,7 @@ impl TransportNativeHID {
         buffer[3] = 0x05u8;
 
         for (sequence_idx, chunk) in in_data
-            .chunks((LEDGER_PACKET_WRITE_SIZE - 5) as usize)
+            .chunks((LEDGER_PACKET_WRITE_SIZE - 6) as usize)
             .enumerate()
         {
             buffer[4] = ((sequence_idx >> 8) & 0xFF) as u8; // sequence_idx big endian
